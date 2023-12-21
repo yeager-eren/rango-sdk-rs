@@ -14,11 +14,13 @@ pub struct ClientConfig {
 /// Client for interacting with Rango APIs
 pub struct Client {
     pub meta: MetaClient,
+    config: ClientConfig,
 }
 
 impl Client {
     pub fn new(device_id: &str, api_key: &str, api_url: Option<String>) -> Self {
         let api_url = api_url.unwrap_or(API_URL.to_owned());
+        let api_url_cp = api_url.clone();
 
         let config = Rc::new(ClientConfig {
             api_url,
@@ -30,6 +32,16 @@ impl Client {
             config: Rc::clone(&config),
         };
 
-        Self { meta }
+        Self {
+            // TODO: remove meta.
+            meta,
+            config: ClientConfig {
+                api_url: api_url_cp,
+                device_id: device_id.into(),
+                api_key: api_key.into(),
+            },
+        }
     }
 }
+
+mod quote;
