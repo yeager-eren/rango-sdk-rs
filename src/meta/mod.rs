@@ -8,7 +8,7 @@ use self::{
 
 mod blockchain;
 mod messaging_protocols;
-mod swappers;
+pub mod swappers;
 
 /// Working with metadata to receive general information about blockchains, swappers,...
 pub struct MetaClient {

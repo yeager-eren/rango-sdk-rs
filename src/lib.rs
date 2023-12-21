@@ -20,6 +20,6 @@
 //! ```
 //!
 mod chains;
-mod meta;
-
 pub mod client;
+mod meta;
+pub mod quote;
