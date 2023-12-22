@@ -11,11 +11,15 @@ async fn main() {
         None,
     );
 
-    // let result = rango.meta.swappers().await;
-    // let result = rango.meta.messaging_protocols().await;
+    let result = rango.swappers().await;
+    // let result = rango.messaging_protocols().await;
 
-    // println!("{:?}", result);
+    println!("{:?}", result);
 
+    // get_quote(&rango).await;
+}
+
+async fn get_quote(client: &Client) {
     let _swappers = vec!["OneInchEth".to_owned()];
     let request = QuoteRequest {
         from: Asset {
@@ -40,7 +44,7 @@ async fn main() {
         contract_call: None,
     };
 
-    let result = rango.quote(request).await.unwrap();
+    let result = client.quote(request).await.unwrap();
 
     println!("{:?}", result);
 }
