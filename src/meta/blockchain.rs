@@ -1,6 +1,8 @@
 use serde::Deserialize;
 
-use crate::chains::ChainInfo;
+use super::chains::ChainInfo;
+
+// use crate::chains::ChainInfo;
 
 #[derive(Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
