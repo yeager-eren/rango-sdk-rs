@@ -1,10 +1,13 @@
-use crate::quote::{QuoteRequest, QuoteRequestQs, QuoteResponse};
+use crate::{
+    error::SdkErr,
+    quote::{QuoteRequest, QuoteRequestQs, QuoteResponse},
+};
 
 impl super::Client {
-    pub async fn quote(&self, request: QuoteRequest) -> Result<QuoteResponse, ureq::Error> {
+    pub async fn quote(&self, request: QuoteRequest) -> Result<QuoteResponse, SdkErr> {
         let qs: QuoteRequestQs = request.into();
         // TODO: Don't using unwrap.
-        let qs: String = qs.try_into().unwrap();
+        let qs: String = qs.try_into()?;
 
         let url = format!(
             "{}/{}?apiKey={}&{}",
