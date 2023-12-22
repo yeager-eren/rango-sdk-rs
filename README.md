@@ -34,8 +34,8 @@ Examples can be found [here][examples].
 | Meta (chains,swappers,messaging_protocols) | ✅ |
 | `/meta` | ❌ |
 | `/quote` | ✅ |
-| `/is-approved` | ❌ |
-| `/status` | ❌ |
+| `/is-approved` | ✅ |
+| `/status` | ✅ |
 | `/balance` | ❌ |
 | `/swap` | ❌ |
 | `/report-tx` | ❌ |
