@@ -28,5 +28,9 @@ impl Client {
     }
 }
 
+mod balance;
+mod check;
 mod meta;
+mod misc;
 mod quote;
+mod swap;
