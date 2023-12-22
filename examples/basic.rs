@@ -12,14 +12,21 @@ async fn main() {
         None,
     );
 
-    // let result = rango.swappers().await;
-    // let result = rango.messaging_protocols().await;
-
-    // println!("{:?}", result);
-
+    get_swappers(&rango).await;
+    // get_messaging_protocols(&rango).await;
     // get_quote(&rango).await;
     // get_check_status(&rango).await;
-    get_is_approved(&rango).await;
+    // get_is_approved(&rango).await;
+}
+
+async fn get_swappers(client: &Client) {
+    let result = client.swappers().await;
+    println!("{:?}", result);
+}
+
+async fn get_messaging_protocols(client: &Client) {
+    let result = client.messaging_protocols().await;
+    println!("{:?}", result);
 }
 
 async fn get_quote(client: &Client) {
