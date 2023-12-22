@@ -21,5 +21,6 @@
 //!
 mod chains;
 pub mod client;
+mod error;
 mod meta;
 pub mod quote;

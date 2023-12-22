@@ -40,7 +40,7 @@ async fn main() {
         contract_call: None,
     };
 
-    let result = rango.quote(request).await;
+    let result = rango.quote(request).await.unwrap();
 
     println!("{:?}", result);
 }
