@@ -19,6 +19,7 @@
 //! let result = rango.meta.chains().await;
 //! ```
 //!
+pub mod check;
 pub mod client;
 mod error;
 mod meta;

@@ -2,7 +2,7 @@
 pub enum SdkErr {
     UreqErr(ureq::Error),
     UrlSerializeErr(serde_urlencoded::ser::Error),
-    Err(std::io::Error),
+    IoErr(std::io::Error),
 }
 
 impl From<ureq::Error> for SdkErr {
@@ -19,6 +19,6 @@ impl From<serde_urlencoded::ser::Error> for SdkErr {
 
 impl From<std::io::Error> for SdkErr {
     fn from(value: std::io::Error) -> Self {
-        SdkErr::Err(value)
+        SdkErr::IoErr(value)
     }
 }

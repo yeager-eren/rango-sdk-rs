@@ -1,5 +1,3 @@
-use std::rc::Rc;
-
 const API_URL: &str = "https://api.rango.exchange";
 
 /// Configs for your client (e.g API Key)
@@ -28,9 +26,9 @@ impl Client {
     }
 }
 
-mod balance;
+// mod balance;
 mod check;
 mod meta;
-mod misc;
+// mod misc;
 mod quote;
-mod swap;
+// mod swap;
