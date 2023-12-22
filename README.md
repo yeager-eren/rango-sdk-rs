@@ -32,8 +32,8 @@ Examples can be found [here][examples].
 |Title| Status |
 |--|--|
 | Meta (chains,swappers,messaging_protocols) | ✅ |
+| `/meta` | ❌ |
 | `/quote` | ✅ |
-| `/swap` | ❌ |
 | `/is-approved` | ❌ |
 | `/status` | ❌ |
 | `/balance` | ❌ |
