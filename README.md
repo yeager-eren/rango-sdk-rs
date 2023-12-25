@@ -36,7 +36,7 @@ Examples can be found [here][examples].
 | `/quote` | ✅ |
 | `/is-approved` | ✅ |
 | `/status` | ✅ |
-| `/balance` | ❌ |
+| `/balance` | ✅ |
 | `/swap` | ❌ |
 | `/report-tx` | ❌ |
 
