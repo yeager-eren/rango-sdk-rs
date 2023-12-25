@@ -1,5 +1,6 @@
 use crate::{
     check::{
+        balance::{BalanceRequest, BalanceResponse},
         is_approved::{CheckApprovalResponse, IsApprovedRequest},
         status::{StatusRequest, StatusResponse},
     },
@@ -30,6 +31,18 @@ impl super::Client {
         );
 
         let body: StatusResponse = ureq::get(&url).call()?.into_json()?;
+        Ok(body)
+    }
+
+    pub async fn balance(&self, request: BalanceRequest) -> Result<BalanceResponse, SdkErr> {
+        let qs = request.into_qs()?;
+
+        let url = format!(
+            "{}/{}?apiKey={}&{}",
+            self.config.api_url, "basic/balance", self.config.api_key, qs
+        );
+
+        let body: BalanceResponse = ureq::get(&url).call()?.into_json()?;
         Ok(body)
     }
 }

@@ -1,5 +1,5 @@
 use rango_sdk::{
-    check::{is_approved::IsApprovedRequest, status::StatusRequest},
+    check::{balance::BalanceRequest, is_approved::IsApprovedRequest, status::StatusRequest},
     client::Client,
     quote::{Asset, QuoteRequest},
 };
@@ -12,11 +12,12 @@ async fn main() {
         None,
     );
 
-    get_swappers(&rango).await;
+    // get_swappers(&rango).await;
     // get_messaging_protocols(&rango).await;
     // get_quote(&rango).await;
     // get_check_status(&rango).await;
     // get_is_approved(&rango).await;
+    get_balance(&rango).await;
 }
 
 async fn get_swappers(client: &Client) {
@@ -74,5 +75,14 @@ async fn get_check_status(client: &Client) {
         tx_id: "0xafa05e208d3ef0e5603776ae8e76e6efcb9f4272f4b11160ea3c240c11efb6a4".into(),
     };
     let result = client.status(request).await.unwrap();
+    println!("{:?}", result);
+}
+
+async fn get_balance(client: &Client) {
+    let request = BalanceRequest {
+        address: "0x000000000000000000000000000000000000dead".into(),
+        blockchain: "BSC".into(),
+    };
+    let result = client.balance(request).await;
     println!("{:?}", result);
 }
