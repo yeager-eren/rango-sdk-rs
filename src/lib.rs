@@ -24,3 +24,4 @@ pub mod client;
 mod error;
 mod meta;
 pub mod quote;
+pub mod swap;

@@ -20,7 +20,7 @@ pub struct Token {
     pub is_popular: bool,
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct Asset {
     pub blockchain: String,
     pub address: Option<String>,
@@ -55,7 +55,7 @@ impl QuoteRequest {
             Some(address) => format!("{}.{}--{}", self.to.blockchain, self.to.symbol, address),
         };
 
-        let request: QuoteRequestQs = QuoteRequestQs {
+        let request = QuoteRequestQs {
             from,
             to,
             amount: self.amount.clone(),
