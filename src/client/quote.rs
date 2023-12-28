@@ -5,7 +5,7 @@ use crate::{
 
 impl super::Client {
     pub async fn quote(&self, request: QuoteRequest) -> Result<QuoteResponse, SdkErr> {
-        let qs = request.into_qs()?;
+        let qs = request.into_qs()?;        
 
         let url = format!(
             "{}/{}?apiKey={}&{}",
