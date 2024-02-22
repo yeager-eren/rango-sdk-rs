@@ -1,6 +1,6 @@
 use serde::Deserialize;
 
-use crate::meta::blockchain::EvmBlockchainMeta;
+use crate::meta::blockchains::EvmBlockchainMeta;
 
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]

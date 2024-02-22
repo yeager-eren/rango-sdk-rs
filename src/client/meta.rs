@@ -1,11 +1,24 @@
 use crate::{
     error::SdkErr,
     meta::{
-        blockchain::BlockchainMeta, messaging_protocols::MessagingProtocols, swappers::SwapperMeta,
+        blockchains::BlockchainMeta, messaging_protocols::MessagingProtocols, meta::Meta,
+        swappers::SwapperMeta,
     },
 };
 
 impl super::Client {
+    pub async fn meta(&self) -> Result<Meta, SdkErr> {
+        let url = format!(
+            "{}/{}?apiKey={}",
+            self.config.api_url, "basic/meta", self.config.api_key
+        );
+
+        println!("url: {:?}", url);
+
+        let body: Meta = ureq::get(&url).call()?.into_json()?;
+        Ok(body)
+    }
+
     pub async fn chains(&self) -> Result<Vec<BlockchainMeta>, SdkErr> {
         let url = format!(
             "{}/{}?apiKey={}",

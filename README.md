@@ -32,7 +32,7 @@ Examples can be found [here][examples].
 |Title| Status |
 |--|--|
 | Meta (chains,swappers,messaging_protocols) | ✅ |
-| `/meta` | ❌ |
+| `/meta` | ✅ |
 | `/quote` | ✅ |
 | `/is-approved` | ✅ |
 | `/status` | ✅ |

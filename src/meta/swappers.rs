@@ -1,10 +1,12 @@
 use serde::Deserialize;
 
 #[derive(Deserialize, Debug)]
+#[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub enum SwapperType {
-    BRIDGE,
-    DEX,
-    AGGREGATOR,
+    Bridge,
+    Dex,
+    Aggregator,
+    OffChain,
 }
 
 #[derive(Deserialize, Debug)]

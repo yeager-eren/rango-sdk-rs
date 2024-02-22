@@ -19,7 +19,8 @@ async fn main() {
     // get_is_approved(&rango).await;
     // get_balance(&rango).await;
     // get_quote(&rango).await;
-    get_swap(&rango).await;
+    // get_swap(&rango).await;
+    get_meta(&rango).await;
 }
 
 async fn get_swappers(client: &Client) {
@@ -120,5 +121,10 @@ async fn get_swap(client: &Client) {
     };
     let result = client.swap(request).await.unwrap();
 
+    println!("{:?}", result);
+}
+
+async fn get_meta(client: &Client) {
+    let result = client.meta().await;
     println!("{:?}", result);
 }
