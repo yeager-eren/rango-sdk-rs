@@ -1,9 +1,11 @@
 # rango-sdk
+
 Unofficial Rango SDK for Rust
 
-## Usage 
+## Usage
 
-1. Initialize a client:
+First you need to initialize your client:
+
 ```rust
 let rango = Client::new(
         "put-a-device-id-for-your-client",
@@ -12,22 +14,13 @@ let rango = Client::new(
     );
 ```
 
-2. Use the methods (e.g. Getting meta):
-```rust
-let result = rango.meta.chains().await;
-```
+Then you can use available methods to interact with rango.
 
-## Examples
+Examples can be found [here](https://github.com/yeager-eren/rango-sdk-rs/tree/main/examples).
 
-Examples can be found [here][examples].
-
-[examples]: https://github.com/yeager-eren/rango-sdk-rs/tree/main/examples
-
-
-## Roadmap
+## Status
 
 ### Basic API Checklist
-
 
 |Title| Status |
 |--|--|
@@ -39,7 +32,6 @@ Examples can be found [here][examples].
 | `/balance` | ✅ |
 | `/swap` | ✅ |
 | `/report-tx` | ❌ |
-
 
 ### Multi API Checklist
 
