@@ -1,6 +1,6 @@
 use rango_sdk::{
     client::Client,
-    quote::{Asset, QuoteRequest},
+    request::{Asset, QuoteRequest},
 };
 
 #[tokio::main]

@@ -1,4 +1,4 @@
-use rango_sdk::{check::status::StatusRequest, client::Client};
+use rango_sdk::{client::Client, request::StatusRequest};
 
 #[tokio::main]
 async fn main() {

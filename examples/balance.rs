@@ -1,4 +1,4 @@
-use rango_sdk::{check::balance::BalanceRequest, client::Client};
+use rango_sdk::{client::Client, request::BalanceRequest};
 
 #[tokio::main]
 async fn main() {

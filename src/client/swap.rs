@@ -4,6 +4,7 @@ use crate::{
 };
 
 impl super::Client {
+    /// After getting a quote, you will call swap. it includes the route and required transaction to be singed by user.
     pub async fn swap(&self, request: SwapRequest) -> Result<SwapResponse, SdkErr> {
         let qs = request.into_qs()?;
 

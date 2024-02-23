@@ -1,9 +1,4 @@
-use rango_sdk::{
-    check::{balance::BalanceRequest, is_approved::IsApprovedRequest, status::StatusRequest},
-    client::Client,
-    quote::{Asset, QuoteRequest},
-    swap::SwapRequest,
-};
+use rango_sdk::client::Client;
 
 #[tokio::main]
 async fn main() {

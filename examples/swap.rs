@@ -1,4 +1,7 @@
-use rango_sdk::{client::Client, quote::Asset, swap::SwapRequest};
+use rango_sdk::{
+    client::Client,
+    request::{Asset, SwapRequest},
+};
 
 #[tokio::main]
 async fn main() {

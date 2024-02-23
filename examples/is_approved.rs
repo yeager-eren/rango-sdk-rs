@@ -1,4 +1,4 @@
-use rango_sdk::{check::is_approved::IsApprovedRequest, client::Client};
+use rango_sdk::{client::Client, request::IsApprovedRequest};
 
 #[tokio::main]
 async fn main() {

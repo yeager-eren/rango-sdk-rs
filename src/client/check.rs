@@ -8,6 +8,7 @@ use crate::{
 };
 
 impl super::Client {
+    /// In some blockchains (like evm), before sending the swap transaction, user is needing to give a approval to the conttact. This method will track and check the approval transcation.
     pub async fn is_approved(
         &self,
         request: IsApprovedRequest,
@@ -22,6 +23,8 @@ impl super::Client {
         let body: CheckApprovalResponse = ureq::get(&url).call()?.into_json()?;
         Ok(body)
     }
+    /// After signing the transaction by the user and receiving transaction hash,
+    /// you could periodically call Rango check-status API to track the transaction status.
     pub async fn status(&self, request: StatusRequest) -> Result<StatusResponse, SdkErr> {
         let qs = request.into_qs()?;
 
@@ -34,6 +37,7 @@ impl super::Client {
         Ok(body)
     }
 
+    /// Getting wallet's balance by giving blockchain and address.
     pub async fn balance(&self, request: BalanceRequest) -> Result<BalanceResponse, SdkErr> {
         let qs = request.into_qs()?;
 

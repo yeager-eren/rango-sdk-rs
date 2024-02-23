@@ -7,6 +7,7 @@ use crate::{
 };
 
 impl super::Client {
+    /// All the essential data needed for a client, including list of support blockchains, tokens and protocols (DEXs & Bridges).
     pub async fn meta(&self) -> Result<Meta, SdkErr> {
         let url = format!(
             "{}/{}?apiKey={}",
@@ -19,6 +20,7 @@ impl super::Client {
         Ok(body)
     }
 
+    /// List of supported chains by Rango
     pub async fn chains(&self) -> Result<Vec<BlockchainMeta>, SdkErr> {
         let url = format!(
             "{}/{}?apiKey={}",
